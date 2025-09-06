@@ -6,7 +6,7 @@ Smartly paste for Markdown.
 
 **Container-Friendly Version**: This version automatically disables paste functionality in remote environments (SSH, WSL, Dev Container) while preserving other features like LaTeX symbols, Ruby tags, and text processing rules.
 
-![Markdown paste demo](./res/images/markdown_paste_demo_min.gif)
+![Markdown paste demo](https://github.com/telesoho/vscode-markdown-paste-image/raw/HEAD/res/images/markdown_paste_demo_min.gif)
 
 ## Requirements
 
@@ -36,11 +36,11 @@ This container-friendly version automatically detects when running in remote env
   - If you paste a text, it will test the text with customize regex, and replace matched content by regex.
   - If you paste a text contain HTML tag, it will try to convert the HTML content to Markdown.
   - If you paste a rich text, it will try to convert the rich text to Markdown.
-    ![](./res/images/markdown-paste-rich-text-html-table.gif)
+    ![](https://github.com/telesoho/vscode-markdown-paste-image/raw/HEAD/res/images/markdown-paste-rich-text-html-table.gif)
 - Download file
 
   Use `Markdown Download` command (Linux or Windows:`Ctrl+Alt+D`, Mac:`Cmd+Alt+D`) to download file and insert link code into Markdown.
-  ![](./res/images/markdown-paste-download-gif-demo.gif)
+  ![](https://github.com/telesoho/vscode-markdown-paste-image/raw/HEAD/res/images/markdown-paste-download-gif-demo.gif)
 - Paste code
 
   Use `Markdown Paste Code` command (Linux or Window:`Ctrl+Alt+C`, Mac:`Cmd+Alt+C`) to paste code with auto-detecting language.
@@ -59,12 +59,12 @@ This container-friendly version automatically detects when running in remote env
 
   Press 'Ctrl+Alt+\\' or input "Insert latex math symbol" in vscode command panel, then input latex symbol name and choose symbol you want.
 
-  ![](res/images/insert-math-symbol-2018-08-12-18-15-12.png)
+  ![](https://github.com/telesoho/vscode-markdown-paste-image/raw/HEAD/res/images/insert-math-symbol-2018-08-12-18-15-12.png)
 - Embed base64 image
 
   While you paste image or download image, you can force the extension to insert embed base64 image to markdown by empty filename.
 
-  ![](res/images/insert_embed_base64_image.gif)
+  ![](https://github.com/telesoho/vscode-markdown-paste-image/raw/HEAD/res/images/insert_embed_base64_image.gif)
 - AI Parse Clipboard
 
   Use LLM AI to parse `text` or `HTML` clipboard content. You can also customize the AI clipboard parsing behavior to better suit different use cases by using the AI configurations
@@ -133,13 +133,13 @@ This container-friendly version automatically detects when running in remote env
       // rule 1
       "regex": "(https?:\/\/.*)", // your javascript style regex
       "options": "ig",            // regex option
-      "replace": "[]($1)"         // replace string
+      "replace": "[](https://github.com/telesoho/vscode-markdown-paste-image/blob/HEAD/$1)"         // replace string
   },
   {
       // rule 2
       "regex": "(https?:\/\/.*)", // your javascript style regex
       "options": "ig",            // regex option
-      "replace": "[]($1)"         // replace string
+      "replace": "[](https://github.com/telesoho/vscode-markdown-paste-image/blob/HEAD/$1)"         // replace string
   },
   ...
   ]
@@ -159,7 +159,7 @@ This container-friendly version automatically detects when running in remote env
     {
       "regex": "^(https?://.*)",
       "options": "ig",
-      "replace": "[]($1)"
+      "replace": "[](https://github.com/telesoho/vscode-markdown-paste-image/blob/HEAD/$1)"
     }
   ]
   ```
@@ -221,7 +221,7 @@ This container-friendly version automatically detects when running in remote env
           {
             "regex": "^(https?://.*)",
             "options": "ig",
-            "replace": "[]($1)"
+            "replace": "[](https://github.com/telesoho/vscode-markdown-paste-image/blob/HEAD/$1)"
           }
         ]
       }
@@ -302,7 +302,7 @@ This container-friendly version automatically detects when running in remote env
     {
       "match": "courses.*cysec",
       "targetPath": "${workspaceFolder}/labs/public/images/cysec/${fileBasenameNoExtension}_${datetime|yyyy-MM-DD_HH-mm-ss}",
-      "linkPattern": "![${altText}](/images/cysec/${fileBasenameNoExtension}_${datetime|yyyy-MM-DD_HH-mm-ss}.png)"
+      "linkPattern": "![${altText}](https://github.com/telesoho/vscode-markdown-paste-image/raw/HEAD/images/cysec/${fileBasenameNoExtension}_${datetime|yyyy-MM-DD_HH-mm-ss}.png)"
     },
     {
       "match": "courses.*wired",
@@ -323,8 +323,8 @@ This container-friendly version automatically detects when running in remote env
 
 ## Contributing
 
-See [the contribution guidelines](./CONTRIBUTING.md) for ideas and guidance on how to improve the extension. Thank you!
+See [the contribution guidelines](https://github.com/telesoho/vscode-markdown-paste-image/blob/HEAD/CONTRIBUTING.md) for ideas and guidance on how to improve the extension. Thank you!
 
 ## License
 
-The extension and source are licensed under the [MIT license](LICENSE.txt).
+The extension and source are licensed under the [MIT license](https://github.com/telesoho/vscode-markdown-paste-image/blob/HEAD/LICENSE.txt).

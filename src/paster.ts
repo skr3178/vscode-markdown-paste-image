@@ -27,6 +27,14 @@ class PasteImageContext {
 
 class Paster {
   public static async pasteCode() {
+    if (isRemoteMode()) {
+      Logger.showErrorMessage(
+        "Paste Code functionality is not available in Remote Mode (SSH, WSL, Dev Container). " +
+          "Please use VS Code's built-in paste feature instead."
+      );
+      return;
+    }
+
     const shell = xclip.getShell();
     const cb = shell.getClipboard();
     const content = await cb.getTextPlain();
@@ -79,9 +87,17 @@ class Paster {
   }
 
   /**
-   * Paste text
+   * Paste text (disabled in container mode)
    */
   public static async paste() {
+    if (isRemoteMode()) {
+      Logger.showErrorMessage(
+        "Paste functionality is not available in Remote Mode (SSH, WSL, Dev Container). " +
+          "Please use VS Code's built-in paste feature instead."
+      );
+      return;
+    }
+
     const shell = xclip.getShell();
     const cb = shell.getClipboard();
     const ctx_type = await this.selectClipboardType(await cb.getContentType());
@@ -122,7 +138,7 @@ class Paster {
           // show warring dialog
           Logger.showErrorMessage(
             "Paste Image is not available in Remote Mode (SSH, WSL, Dev Container). " +
-              "Please paste the image locally, or use VS Code’s built-in paste feature instead."
+              "Please paste the image locally, or use VS Code's built-in paste feature instead."
           );
         }
         break;
@@ -133,9 +149,17 @@ class Paster {
   }
 
   /**
-   * Download url content in clipboard
+   * Download url content in clipboard (disabled in container mode)
    */
   public static async pasteDownload() {
+    if (isRemoteMode()) {
+      Logger.showErrorMessage(
+        "Download functionality is not available in Remote Mode (SSH, WSL, Dev Container). " +
+          "Please use VS Code's built-in features instead."
+      );
+      return;
+    }
+
     const shell = xclip.getShell();
     const cb = shell.getClipboard();
     const ctx_type = await this.selectClipboardType(await cb.getContentType());
